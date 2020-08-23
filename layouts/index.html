@@ -8,16 +8,20 @@
   <div class="splash">
     
     <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
+
+    {{ partial "social-icons.html" .}}
     {{ if isset .Params "handle" }}
     <span class="handle">@{{ .Params.handle }}</span>
     {{ end }}
     <h2>
       {{ .Params.subheading }}
     </h2>
-    <!-- Replace MEEEEE -->
 
-    {{ partial "social-icons.html" .}}
+{{ if .Content }}
+{{ .Content }}
+{{ end }}
   </div>
 </div>
+
 
 {{ end }}
